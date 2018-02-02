@@ -122,8 +122,14 @@ var saveAs = saveAs || (function(view) {
 				}
 			;
 			filesaver.readyState = filesaver.INIT;
+			
+			var is_iOS = (
+				navigator.userAgent.match(/iPhone/i) ||
+				navigator.userAgent.match(/iPod/i) ||
+				navigator.userAgent.match(/iPad/i)
+			);
 
-			if (can_use_save_link) {
+			if (can_use_save_link && !is_iOS) {
 				object_url = get_URL().createObjectURL(blob);
 				setTimeout(function() {
 					save_link.href = object_url;
