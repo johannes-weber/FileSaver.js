@@ -1,6 +1,6 @@
 {
-  "name": "file-saver",
-  "version": "1.3.4",
+  "name": "file-saver-ios-ff-bugfix",
+  "version": "1.3.5",
   "description": "An HTML5 saveAs() FileSaver implementation",
   "main": "dist/FileSaver.js",
   "module": "src/FileSaver.js",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/eligrey/FileSaver.js"
+    "url": "https://github.com/johannes-weber/FileSaver.js"
   },
   "keywords": [
     "filesaver",
@@ -26,9 +26,9 @@
   "author": "Eli Grey <me@eligrey.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/eligrey/FileSaver.js/issues"
+    "url": "https://github.com/johannes-weber/FileSaver.js/issues"
   },
-  "homepage": "https://github.com/eligrey/FileSaver.js#readme",
+  "homepage": "https://github.com/johannes-weber/FileSaver.js#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
