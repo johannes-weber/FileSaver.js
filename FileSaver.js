@@ -1,9 +1,9 @@
 /* FileSaver.js
  * A saveAs() FileSaver implementation.
- * 1.3.5
- * 2018-01-22 15:49:54
+ * 1.3.4
+ * 2018-01-12 13:14:0
  *
- * By Eli Grey, https://eligrey.com
+ * By Eli Grey, http://eligrey.com
  * License: MIT
  *   See https://github.com/eligrey/FileSaver.js/blob/master/LICENSE.md
  */
@@ -11,7 +11,7 @@
 /*global self */
 /*jslint bitwise: true, indent: 4, laxbreak: true, laxcomma: true, smarttabs: true, plusplus: true */
 
-/*! @source http://purl.eligrey.com/github/FileSaver.js/blob/master/src/FileSaver.js */
+/*! @source http://purl.eligrey.com/github/FileSaver.js/blob/master/FileSaver.js */
 
 var saveAs = saveAs || (function(view) {
 	"use strict";
@@ -122,12 +122,8 @@ var saveAs = saveAs || (function(view) {
 				}
 			;
 			filesaver.readyState = filesaver.INIT;
-			
-			var is_iOS = (
-				navigator.userAgent.match(/iPhone/i) ||
-				navigator.userAgent.match(/iPod/i) ||
-				navigator.userAgent.match(/iPad/i)
-			);
+
+			var is_iOS = navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/iPad/i);
 
 			if (can_use_save_link && !is_iOS) {
 				object_url = get_URL().createObjectURL(blob);
@@ -182,4 +178,10 @@ var saveAs = saveAs || (function(view) {
 	|| this
 ));
 
-export default saveAs;
+if (typeof module !== "undefined" && module.exports) {
+	module.exports.saveAs = saveAs;
+} else if ((typeof define !== "undefined" && define !== null) && (define.amd !== null)) {
+	define("FileSaver.js", function() {
+		return saveAs;
+	});
+}
