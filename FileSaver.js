@@ -106,6 +106,13 @@ var saveAs = saveAs || (function(view) {
 					// don't create more object URLs than needed
 					if (!object_url) {
 						object_url = get_URL().createObjectURL(blob);
+						var a = document.createElement("a");
+						a.href = object_url;
+						a.target = "_blank";
+						a.style.display = "none";
+						document.body.appendChild("a");
+						click(a);
+						return;
 					}
 					if (force) {
 						view.location.href = object_url;
