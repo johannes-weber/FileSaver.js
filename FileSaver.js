@@ -110,7 +110,6 @@ var saveAs = saveAs || (function(view) {
 						a.href = object_url;
 						a.target = "_blank";
 						a.style.display = "none";
-						document.body.appendChild("a");
 						click(a);
 						return;
 					}
